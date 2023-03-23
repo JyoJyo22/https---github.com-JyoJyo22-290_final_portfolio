@@ -25,10 +25,10 @@ export const CreateKanjiPage = () => {
         console.log(response)
         if(response.status === 201){
             alert(`A new Kanji has been successfully created via the CreateKanjiPage`);
-            redirect("/");
+            redirect("/kanji");
         } else {
             alert(`A new Kanji has failed to create via the CreateKanjiPage with status code: ${response.status}`);
-            redirect("/");
+            redirect("/kanji");
         }
     };
 

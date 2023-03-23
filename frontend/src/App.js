@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import HomePage from './pages/WebDevPage';
+import HomePage from './pages/HomePage';
 import GalleryPage from './pages/GalleryPage';
 import StaffPage from './pages/StaffPage';
 import OrderPage from './pages/OrderPage';
@@ -11,7 +11,7 @@ import KanjiHomePage from './pages/KanjiHomePage';
 import CreateKanjiPage from './pages/CreateKanjiPage';
 import EditKanjiPage from './pages/EditKanjiPage';
 import IntraNav from './components/IntraNav';
-import HomeHeader from './components/WebDevHeader';
+import HomeHeader from './components/HomeHeader';
 import ContactHeader from './components/ContactHeader';
 import OrderHeader from './components/OrderHeader';
 import StaffHeader from './components/StaffHeader';
@@ -32,6 +32,9 @@ function App() {
         <section className="header-nav">
           <Routes>
             <Route path="/" element={<HomeHeader />} />
+            <Route path="/kanji" element={<KanjiHomePage setKanji={setKanji}/>} />
+            <Route path="/kanji-create" element={<CreateKanjiPage />} />
+            <Route path="/kanji-edit" element={<EditKanjiPage toEditKanji={kanji}/>} />
             <Route path="/projects" element={<GalleryHeader />} />
             <Route path="/staff" element={<StaffHeader />} />
             <Route path="/order" element={<OrderHeader />} />
