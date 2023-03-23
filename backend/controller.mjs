@@ -12,10 +12,7 @@ app.use(express.json());
 
 //  CREATE CONTROLLER     ######################################
 // define a Create route
-app.post('/create', (req, res) => { 
-    console.log(req.query);
-    console.log(req.query.kanji);
-    console.log("REQ QUERY");
+app.post('/create', (req, res) => {
     kanjiModels.createKanjiDoc(
         req.query.kanji,
         req.query.romaji, 

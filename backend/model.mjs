@@ -50,7 +50,6 @@ const createKanjiDoc = async (kanji, romaji, hint, section, deadline) => {
         deadline: deadline
     });
     // call save to persist/save this obj as a Document in MongoDB
-    console.log(n3Kanji);
     return n3Kanji.save();
 }
 

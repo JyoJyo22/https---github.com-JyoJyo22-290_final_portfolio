@@ -13,8 +13,6 @@ export const CreateKanjiPage = () => {
 
     const addKanji = async () => {
         const newKanji = { kanji, romaji, hint, section, deadline };
-        console.log(newKanji);
-        console.log("ADD KANJI in CreateKanjiPage");
         const response = await fetch('/create', {
             method: 'POST',
             body: JSON.stringify(newKanji),
@@ -22,7 +20,6 @@ export const CreateKanjiPage = () => {
                 'Content-Type': 'application/json',
             },
         });
-        console.log(response)
         if(response.status === 201){
             alert(`A new Kanji has been successfully created via the CreateKanjiPage`);
             redirect("/kanji");

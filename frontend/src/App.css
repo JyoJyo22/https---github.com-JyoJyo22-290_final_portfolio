@@ -523,6 +523,25 @@ tr {
     justify-content: center; 
 }
 
+.kanji-en {
+    font-family: 'Zen Old Mincho', serif;
+    margin: 5px 80px 5px 10px;
+    font-weight: 100;                         
+    font-size: large;                         
+    align-items: center;                         
+    justify-content: center;                           
+    text-align: left;
+}
+
+
+.kanji-ja {
+    font-family: 'Zen Old Mincho', serif;      
+    text-align: right;                   
+    margin: 5px 10px 5px 50px;
+    align-items: center;                          
+    justify-content: center; 
+}
+
 .order-en {
     font-family: 'Zen Old Mincho', serif;
     margin: 5px 80px 5px 10px;
@@ -1220,7 +1239,6 @@ tr {
         justify-content: center;                            /*     vert      */
         padding: 5% 0% 0% 0%;
     }
-    
 
     .contact-ja {
         font-family: 'Zen Old Mincho', serif;      
@@ -1230,6 +1248,28 @@ tr {
         justify-content: center;                            /*     vert      */
         padding: 50% 0% 0% 0%;
     }
+
+    .kanji-en {
+        font-family: 'Zen Old Mincho', serif;
+        letter-spacing: +10px;                       /*      vert      */
+        margin: 5px;
+        font-weight: 100;                           /*     vert      */
+        font-size: large;                            /*     vert      */
+        align-items: center;                            /*     vert      */
+        justify-content: center;                            /*     vert      */
+        padding: 5% 0% 0% 0%;
+    }
+    
+
+    .kanji-ja {
+        font-family: 'Zen Old Mincho', serif;      
+        margin: 5px;
+        letter-spacing: +10px;                              /*     vert      */
+        align-items: center;                            /*     vert      */
+        justify-content: center;                            /*     vert      */
+        padding: 50% 0% 0% 0%;
+    }
+    
 
     .order-en {
         font-family: 'Zen Old Mincho', serif;

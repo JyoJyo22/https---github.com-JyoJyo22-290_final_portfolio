@@ -3,20 +3,14 @@ import React from "react"
 function HomePage() {
     return(
         <>
-            <h2>Web Development Concepts</h2>
-            <article id="web-servers" className="main-text-section">
-                <h3>About Web Servers</h3>
+            <h2>MERN Stack Website</h2>
+            <article id="mern-stack" className="main-text-section">
                 <p>
-                    Welcome to the web dev page page. An "index page" is the default name for the home page of a website, 
-                    depending on which web server that page is hosted on. This is the first page that users will
-                    interact with when they visit a website, it usually provides navigation to all other pages for
-                    the user. This way, the user does not have to include a specific path/file in the URL. They
-                    can simply use the domain name in the URL and the server will serve the user this index page
-                    if there is one. I created this index page with an HTMl file in VS Code. The &lt;head&gt; section
-                    of the HTML file contains meta-data about how this file should be interacted with via browsers, screen
-                    readers, etc. and the &lt;body&gt; section of the HTML file contains the client-constructed HTML
-                    content that will be displayed in the viewport of the browser. This is how users can interact with
-                    the content in this index.html file and this is how its content is constructed and displayed.
+                    This portfolio site has been created via a MERN stack. This means that the following Javascript-coupled 
+                    languages have contributed to its construction, layout, and design:  MongoDB, Express, React, and Node. 
+                    The database for this site is being maintained by MongoDB Atlas. MongoDB is known as a Document-oriented 
+                    database management system in which data is stored as JSON "documents." Documents that are similar will be
+                    added to a "Collection" in order to organize data. 
                 </p>
             </article>
         </>

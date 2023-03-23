@@ -3,8 +3,6 @@ import { TiDelete, TiEdit } from "react-icons/ti";
 
 
 function KanjiRow( {currKanji, onDelete, onEdit} ) {
-    console.log(currKanji)
-    console.log("currKANJI")
 
     return(
         <tr className="testy">

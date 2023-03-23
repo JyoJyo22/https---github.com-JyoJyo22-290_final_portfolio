@@ -18,6 +18,7 @@ import StaffHeader from './components/StaffHeader';
 import GalleryHeader from './components/GalleryHeader';
 import WebDevHeader from './components/WebDevHeader';
 import WebDevPage from './pages/WebDevPage';
+import KanjiHeader from './components/KanjiHeader';
 import products from './data/products';
 
 
@@ -32,9 +33,9 @@ function App() {
         <section className="header-nav">
           <Routes>
             <Route path="/" element={<HomeHeader />} />
-            <Route path="/kanji" element={<KanjiHomePage setKanji={setKanji}/>} />
-            <Route path="/kanji-create" element={<CreateKanjiPage />} />
-            <Route path="/kanji-edit" element={<EditKanjiPage toEditKanji={kanji}/>} />
+            <Route path="/kanji" element={<KanjiHeader/>} />
+            <Route path="/kanji-create" element={<KanjiHeader/>} />
+            <Route path="/kanji-edit" element={<KanjiHeader/>} />
             <Route path="/projects" element={<GalleryHeader />} />
             <Route path="/staff" element={<StaffHeader />} />
             <Route path="/order" element={<OrderHeader />} />

@@ -5,8 +5,6 @@ import { CgAddR } from "react-icons/cg"
 
 
 function KanjiHomePage( {setKanji} ) {
-    console.log(setKanji)
-    console.log("SET KANJI FUNC")
     // Use the Navigate for redirection
     const redirect = useNavigate();
 
@@ -16,9 +14,7 @@ function KanjiHomePage( {setKanji} ) {
     // RETRIEVE the entire list of kanji
     const loadKanji = async () => {
         const response = await fetch('/get', { method: 'GET' });
-        console.log(response)
         const kanjis = await response.json();
-        console.log(kanjis)
         setKanjis(kanjis);
     } 
 
