@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import express from 'express';
-import asyncHandler from 'express-async-handler';
 // import the export obj from model.mjs and name it kanjiModels
 import * as kanjiModels from './model.mjs';
 
@@ -14,11 +13,11 @@ app.use(express.json());
 // define a Create route
 app.post('/create', (req, res) => {
     kanjiModels.createKanjiDoc(
-        req.query.kanji,
-        req.query.romaji, 
-        req.query.hint,
-        req.query.section, 
-        req.query.deadline
+        req.body.kanji,
+        req.body.romaji, 
+        req.body.hint,
+        req.body.section, 
+        req.body.deadline
         )
         .then(new_kanji => {
             res.status(201).json(new_kanji);
@@ -72,12 +71,12 @@ app.get('/get/:_id', (req, res) => {
 // define an Update route
 app.put('/update/:_id', (req, res) => {
     kanjiModels.updateKanji(
-        req.query._id,
-        req.query.kanji,
-        req.query.romaji, 
-        req.query.hint,
-        req.query.section, 
-        req.query.deadline
+        req.params._id,
+        req.body.kanji,
+        req.body.romaji, 
+        req.body.hint,
+        req.body.section, 
+        req.body.deadline
         )
         .then(update_kanji => {
             res.json(update_kanji);

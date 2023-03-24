@@ -27,11 +27,6 @@ function KanjiHomePage( {setKanji} ) {
 
     // UPDATE a single kanji
     const onEditKanji = async currKanji => {
-        // console.log(_id, "THIS IS THE ID")
-        // const response = await fetch(`/get/${_id}`, { method: 'GET' });
-        // console.log(response)
-        // const kanji = await response.json();
-        // console.log(kanji)
         setKanji(currKanji);
         redirect("/kanji-edit");
     }
