@@ -3,17 +3,16 @@ import KanjiRow from './KanjiRow';
 
 function KanjiTable({ kanjis, onDelete, onEdit }) {
     return (
-        <table id="kanjiTable">
-            <caption>Add and Edit Kanji</caption>
+        <table className="kanji-table">
             <thead>
                 <tr>
-                    <th>Kanji</th>
-                    <th>Romaji</th>
-                    <th>Hint</th>
-                    <th>Section</th>
-                    <th>Deadline</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
+                    <th className="kanji-header">Delete</th>
+                    <th className="kanji-header">Edit</th>
+                    <th className="kanji-header">Kanji</th>
+                    <th className="kanji-header">Romaji</th>
+                    <th className="kanji-header">Hint</th>
+                    <th className="kanji-header">Section</th>
+                    <th className="kanji-header">Deadline</th>
                 </tr>
             </thead>
             <tbody>

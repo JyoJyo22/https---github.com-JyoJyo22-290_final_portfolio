@@ -25,9 +25,9 @@ kanji_db.once("open", (error) => {
 
 // Define the Collection's Schema.
 const n3Schema = mongoose.Schema({
-    kanji: { type: String, required: true, default: "ge-mu" },
-	romaji: { type: String, required: true, default: "geemu" },
-    hint: { type: String, required: true, default: "video game" },
+    kanji: { type: String, required: true, default: "漢字" },
+	romaji: { type: String, required: true, default: "kanji" },
+    hint: { type: String, required: true, default: "chinese character" },
 	section: { type: Number, required: true, default: 3 },
 	deadline: { type: Date, required: true, default: Date.now }
 });

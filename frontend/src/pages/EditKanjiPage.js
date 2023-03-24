@@ -36,8 +36,11 @@ export const EditKanjiPage = ({ toEditKanji }) => {
     return (
         <>
             <article>
-                <h2>Edit a Kanji in the Kanji Collection in Mongo DB</h2>
-                <p>Paragraph about this page.</p>
+                <h2>Edit Kanji</h2>
+                <p className="kanji-list-p">Here you can edit a Kanji in the Kanji Collection in Mongo DB. This will change any values you decide to 
+                    update in the database, this way your changes will persist across all of your Kanji studying. Your Kanji
+                    can be updated at any time via the edit icon on the Kanji List page.
+                </p>
                 <form onSubmit={(e) => { e.preventDefault();}}>
                     <fieldset>
                         <legend>Which Kanji do you want to update?</legend>
@@ -87,12 +90,12 @@ export const EditKanjiPage = ({ toEditKanji }) => {
                             pattern="\d{2}-\d{2}-\d{2}"
                             id="newDeadline" />
 
-                        <label htmlFor="submit">
+                        <label htmlFor="submit"></label>
                         <button
                             type="submit"
                             onClick={editKanji}
                             id="submit"
-                        >Save</button> to the Kanji Collection</label>
+                        >Edit Kanji</button>
                     </fieldset>
                 </form>
             </article>

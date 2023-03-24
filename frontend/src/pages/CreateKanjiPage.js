@@ -33,8 +33,11 @@ export const CreateKanjiPage = () => {
     return (
         <>
         <article>
-            <h2>Add a new Kanji to the Kanji Collection in Mongo DB</h2>
-            <p>Paragraph about this page.</p>
+            <h2>Add New Kanji</h2>
+            <p className="kanji-list-p">Here you can add a new Kanji to the Kanji Collection in MongoDB. This will save your new Kanji to the
+                database so that it'll still be here when you return. You can always delete the Kanji from the database 
+                with the delete icon on the Kanji List page.
+            </p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
                     <legend>Which Kanji do you want to add?</legend>
@@ -84,12 +87,12 @@ export const CreateKanjiPage = () => {
                         pattern="\d{2}-\d{2}-\d{2}"
                         id="newDeadline" />
 
-                    <label htmlFor="submit">
+                    <label htmlFor="submit"></label>
                     <button
                         type="submit"
                         onClick={addKanji}
                         id="submit"
-                    >Add</button> to the Kanji Collection</label>
+                    >Add Kanji</button>
                 </fieldset>
                 </form>
             </article>

@@ -1072,7 +1072,7 @@ tr {
         background-attachment: fixed;
         margin: 0 auto;
         padding: 0;
-        max-width: 90vw;
+        max-width: 100vw;
         font-family: 'Cormorant', serif;
         font-size: large;
         color: var(--dark-gray);
@@ -1080,7 +1080,7 @@ tr {
         max-height: 100vh;           /*     vert     */
         flex-direction: row;         /*     vert     */
         direction: ltr;                      /*    scrolling horiz    */
-        overflow-x: scroll;                 /*    scrolling horiz    */
+        /* overflow-x: scroll;                   */
     }
 
     
@@ -1589,9 +1589,92 @@ tr {
         justify-content: left;
     }
 
-    .testy {
+    .kanji-table {
+        border-collapse: separate;
+        border-spacing: 5px 10px;
+        min-width: 500px;
+        width: 95%;
+        background-color: var(--dark-gray);
+        border: 5px solid var(--dark-matcha);
         color: var(--light-cream);
+        border-radius: 5px;
+        margin: 10px;
     }
+
+    .add-kanji-button {
+        display: flex;
+        background-color: var(--dark-matcha);
+        border: 5px solid var(--dark-matcha);
+        color: var(--light-cream);
+        border-radius: 5px;
+        margin: 10px, 10px, 15px, 10px;
+        min-width: 200px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .add-kanji-button:hover {
+        cursor: default;
+        background-color: var(--dark-matcha);
+        border: 5px solid var(--dark-matcha);
+        color: var(--light-cream);
+        border-radius: 5px;
+    }
+
+    .add-kanji-icon {
+        color: var(--dark-gray);
+        margin: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .add-kanji-icon:hover {
+        color: var(--medium-cream);
+        cursor: pointer;
+    }
+
+    .edit-kanji-icon {
+        color: var(--light-matcha);
+        margin: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .edit-kanji-icon:hover {
+        color: var(--medium-cream);
+        cursor: pointer;
+    }
+
+    .delete-kanji-icon {
+        color: var(--light-matcha);
+        margin: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .delete-kanji-icon:hover {
+        color: var(--medium-cream);
+        cursor: pointer;
+    }
+
+    .add-kanji-p {
+        margin: 5px;
+        padding: 0px;
+    }
+
+    .kanji-list-p {
+        background-color: var(--medium-cream);
+        border: 5px solid var(--light-matcha);
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .kanji-header {
+        font-size: 100%;
+    }
+
 }
 
 /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */

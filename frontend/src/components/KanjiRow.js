@@ -5,9 +5,9 @@ import { TiDelete, TiEdit } from "react-icons/ti";
 function KanjiRow( {currKanji, onDelete, onEdit} ) {
 
     return(
-        <tr className="testy">
-            <td><TiDelete onClick={() => onDelete(currKanji._id)} title="delete-icon" /></td>
-            <td><TiEdit onClick={() => onEdit(currKanji)} title="edit-icon" /></td>
+        <tr>
+            <td><TiDelete onClick={() => onDelete(currKanji._id)} className="delete-kanji-icon" title="delete-kanji" /></td>
+            <td><TiEdit onClick={() => onEdit(currKanji)} className="edit-kanji-icon" title="edit-kanji" /></td>
 
             <td title="Kanji">{currKanji.kanji}</td>
             <td title="Romaji">{currKanji.romaji}</td>

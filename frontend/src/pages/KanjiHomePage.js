@@ -59,9 +59,16 @@ function KanjiHomePage( {setKanji} ) {
     // DISPLAY the kanji
     return (
         <>
-            <h2>List of Kanji</h2>
-            <p>Paragraph about this page.</p>
-            <span><CgAddR onClick={() => onCreateKanji()} title="create-icon" /></span>
+            <h2>Kanji List</h2>
+            <p className="kanji-list-p">Find the table of currently loaded Kanji here. Each Kanji comes with its written Japanese form, 
+                romaji form, a hint for memorizing that Kanji, and the JLPT section that the Kanji is required for. 
+                You can also set a study deadline for yourself for each Kanji. Use the buttons below to add a new Kanji, edit
+                a previous Kanji entry, or delete an entry.
+            </p>
+            <button className="add-kanji-button">
+                <CgAddR onClick={() => onCreateKanji()} className="add-kanji-icon" title="create-kanji" />
+                <p className="add-kanji-p">Add Kanji</p>
+            </button>
             
             <KanjiTable
                 kanjis={kanjis} 
