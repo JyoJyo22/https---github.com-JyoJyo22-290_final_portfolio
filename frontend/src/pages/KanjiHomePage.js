@@ -32,7 +32,7 @@ function KanjiHomePage( {setKanji} ) {
         // console.log(response)
         // const kanji = await response.json();
         // console.log(kanji)
-        setKanjis(currKanji);
+        setKanji(currKanji);
         redirect("/kanji-edit");
     }
 

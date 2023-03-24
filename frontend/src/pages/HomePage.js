@@ -45,6 +45,13 @@ function HomePage() {
                         on top of Node. With all of these languages incorporated in, this app operates on Javascript from the 
                         front all the way to the database, thus completing the MERN stack. 
                     </li>
+                    <li>
+                            Other minor technologies have also been incorporated into this site. The fonts that you are reading 
+                        have been imported from Google Fonts to match the theme of this site. React Icons have been included
+                        in order to create user-friendly buttons like the ones you will find in the data (Kanji) list page. 
+                        Additionally, the images in this app have been optimized via online image compression and conversion, 
+                        thus making page loading a smoother experience. 
+                    </li>
                 </ul>
             </article>
         </>

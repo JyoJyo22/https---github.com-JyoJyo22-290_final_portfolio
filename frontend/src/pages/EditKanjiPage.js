@@ -30,7 +30,7 @@ export const EditKanjiPage = ({ toEditKanji }) => {
             const errMessage = await response.json();
             alert(`A Kanji has failed to update via the EditKanjiPage with status code: ${response.status}. ${errMessage.Error}`);
         }
-        redirect("/");
+        redirect("/kanji");
     }
 
     return (
@@ -43,12 +43,12 @@ export const EditKanjiPage = ({ toEditKanji }) => {
                 </p>
                 <form onSubmit={(e) => { e.preventDefault();}}>
                     <fieldset>
-                        <legend>Which Kanji do you want to update?</legend>
+                        <legend>What do you want to update in this Kanji?</legend>
                         <label htmlFor="kanji">Kanji</label>
                         <input
                             type="text"
                             name="kanji"
-                            placeholder="New Kanji"
+                            placeholder="currently: {kanji}"
                             value={kanji}
                             onChange={e => setKanji(e.target.value)} 
                             id="newKanji" />

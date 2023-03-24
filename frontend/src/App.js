@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
@@ -24,7 +24,9 @@ import products from './data/products';
 
 
 function App() {
-  const [kanji, setKanji] = ([]);
+  // pass shared State up to ancestor component
+  // these State vars are shared btw KanjiHomePage and KanjiEditPage
+  const [kanji, setKanji] = useState([]);
 
   return (
     <div className="app">

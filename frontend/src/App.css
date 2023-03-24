@@ -486,22 +486,20 @@ tr {
 
 .web-en {
     font-family: 'Zen Old Mincho', serif;
-    letter-spacing: +8px;                       /*      vert      */
-    margin: 5px;
-    font-weight: 100;                           /*     vert      */
-    font-size: large;                            /*     vert      */
-    align-items: center;                            /*     vert      */
-    justify-content: center;                            /*     vert      */
-    text-align: center;
+    margin: 5px 80px 5px 10px;
+    font-weight: 100;                         
+    font-size: large;                         
+    align-items: center;                         
+    justify-content: center;                           
+    text-align: left;
 }
 
 .web-ja {
     font-family: 'Zen Old Mincho', serif;      
-    text-align: center;                      /*     vert      */
-    margin: 5px;
-    letter-spacing: +7px;                              /*     vert      */
-    align-items: center;                            /*     vert      */
-    justify-content: center;                            /*     vert      */
+    text-align: right;                   
+    margin: 5px 10px 5px 50px;
+    align-items: center;                          
+    justify-content: center; 
 }
 
 .contact-en {
@@ -725,6 +723,96 @@ tr {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
+}
+
+.kanji-table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 5px 10px;
+    width: 95%;
+    background-color: var(--dark-gray);
+    border: 5px solid var(--dark-matcha);
+    color: var(--light-cream);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.add-kanji-button {
+    display: flex;
+    background-color: var(--dark-matcha);
+    border: 5px solid var(--dark-matcha);
+    color: var(--light-cream);
+    border-radius: 5px;
+    margin: 10px, 10px, 15px, 10px;
+    min-width: 200px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.add-kanji-button:hover {
+    cursor: default;
+    background-color: var(--dark-matcha);
+    border: 5px solid var(--dark-matcha);
+    color: var(--light-cream);
+    border-radius: 5px;
+}
+
+.add-kanji-icon {
+    color: var(--dark-gray);
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+.add-kanji-icon:hover {
+    color: var(--medium-cream);
+    cursor: pointer;
+}
+
+.edit-kanji-icon {
+    color: var(--light-matcha);
+    margin: 2px;
+    height: 30px;
+    width: 30px;
+}
+
+.edit-kanji-icon:hover {
+    color: var(--medium-cream);
+    cursor: pointer;
+}
+
+.delete-kanji-icon {
+    color: var(--light-matcha);
+    margin: 2px;
+    height: 30px;
+    width: 30px;
+}
+
+.delete-kanji-icon:hover {
+    color: var(--medium-cream);
+    cursor: pointer;
+}
+
+.add-kanji-p {
+    margin: 5px;
+    padding: 0px;
+}
+
+.kanji-list-p {
+    background-color: var(--medium-cream);
+    border: 5px solid var(--light-matcha);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.kanji-header {
+    font-size: 80%;
+}
+
+.kanji-cell {
+    word-wrap: break-word;
 }
 
 
@@ -1267,7 +1355,7 @@ tr {
         letter-spacing: +10px;                              /*     vert      */
         align-items: center;                            /*     vert      */
         justify-content: center;                            /*     vert      */
-        padding: 50% 0% 0% 0%;
+        padding: 50% 0% 5% 0%;
     }
     
 
