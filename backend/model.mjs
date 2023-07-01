@@ -250,7 +250,7 @@ const deleteKanjiById = async (_id, jlpt) => {
             console.log("Defaulting on the kanji delete Model");
     }
 };
-
+ 
 // define a model to delete many Docs based on a given filter
 // const deleteKanjiByProp = async (filter) => {
 //     const result = await n3.deleteMany(filter);
