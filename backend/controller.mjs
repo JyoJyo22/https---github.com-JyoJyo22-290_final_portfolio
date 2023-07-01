@@ -16,30 +16,31 @@ app.post('/create', (req, res) => {
         req.body.kanji,
         req.body.romaji, 
         req.body.hint,
-        req.body.section, 
-        req.body.deadline
+        req.body.section
         )
         .then(new_kanji => {
             res.status(201).json(new_kanji);
-            console.log("CREATE:   A new Kanji document was successfully created.");
+            console.log(`CREATE:   A new Kanji was successfully added to JLPT section ${req.body.section}`);
         })
         .catch(error => {
             console.error(error);
-            res.status(400).json( { Error: "The new Kanji document creation failed due to invalid user input."} );
+            res.status(400).json( { Error: "The new Kanji creation failed due to invalid user input."} );
         });
 });
 
 
 //  RETRIEVE CONTROLLERS     ######################################
 // define a Retrieve route
-app.get('/get', (req, res) => { 
-    kanjiModels.getKanji()
+app.get('/get/:jlpt', (req, res) => {
+    kanjiModels.getKanji(req.params.jlpt)
         .then(retrieved_kanji => {
-            if (retrieved_kanji !== null) {    
+            if (retrieved_kanji !== null && retrieved_kanji !== undefined) {    
+                console.log("here is response: ", retrieved_kanji);
                 res.json(retrieved_kanji);
-                console.log("RETRIEVE:  An existing Kanji document was successfully retrieved.");
+                console.log("RETRIEVE:  An existing Kanji was successfully retrieved.");
             } else {
-                res.status(404).json( { Error: "The Kanji document was not found."} );
+                console.log("here is response: ", retrieved_kanji);
+                res.status(404).json( { Error: "The Kanji was not found or was undefined"} );
             }
         })
         .catch(error => {
@@ -50,21 +51,21 @@ app.get('/get', (req, res) => {
 
 
 // define a Retrieve by ID route
-app.get('/get/:_id', (req, res) => {
-    kanjiModels.getKanjiById(req.params._id)
-    .then(retrieved_kanji => {
-            if (retrieved_kanji !== null) {    
-                res.json(retrieved_kanji);
-                console.log("RETRIEVE:  An existing Kanji document was successfully retrieved.");
-            } else {
-                res.status(404).json( { Error: "The Kanji document was not found."} );
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            res.status(400).json( {Error: "The Kanji document retrieval failed due to invalid user input."} );
-        });
-});
+// app.get('/get/:_id/:jlpt', (req, res) => {
+//     kanjiModels.getKanjiById(req.params._id, req.params.jlpt)
+//     .then(retrieved_kanji => {
+//             if (retrieved_kanji !== null) {    
+//                 res.json(retrieved_kanji);
+//                 console.log("RETRIEVE:  An existing Kanji document was successfully retrieved.");
+//             } else {
+//                 res.status(404).json( { Error: "The Kanji document was not found."} );
+//             }
+//         })
+//         .catch(error => {
+//             console.error(error);
+//             res.status(400).json( {Error: "The Kanji document retrieval failed due to invalid user input."} );
+//         });
+// });
 
 
 //  UPDATE CONTROLLER     ######################################
@@ -75,8 +76,7 @@ app.put('/update/:_id', (req, res) => {
         req.body.kanji,
         req.body.romaji, 
         req.body.hint,
-        req.body.section, 
-        req.body.deadline
+        req.body.section
         )
         .then(update_kanji => {
             res.json(update_kanji);
@@ -91,8 +91,8 @@ app.put('/update/:_id', (req, res) => {
 
 //  DELETE CONTROLLER     ######################################
 // define a Delete route
-app.delete('/delete/:_id', (req, res) => {
-    kanjiModels.deleteKanjiById(req.params._id)
+app.delete('/delete/:_id/:jlpt', (req, res) => {
+    kanjiModels.deleteKanjiById(req.params._id, req.params.jlpt)
         .then(deletedCount => {
             if (deletedCount === 1) {
                 res.status(204).send();

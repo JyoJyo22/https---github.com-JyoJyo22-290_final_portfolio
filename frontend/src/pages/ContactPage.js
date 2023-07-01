@@ -38,7 +38,7 @@ function ContactPage() {
     return (
         <>
             <h2>Contact Form</h2>
-            <p>
+            <p className="kanji-list-p">
                 This is an online Form that you can fill out to leave feedback for this website. Please fill in your
                 information with any additional comments you'd like to make. Fields outlined in red are required for
                 submitting the form.

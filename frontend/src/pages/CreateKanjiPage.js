@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export const CreateKanjiPage = () => {
+export const CreateKanjiPage = ( { jlpt }) => {
 
     const [kanji, setKanji]           = useState('');
     const [romaji, setRomaji]         = useState('');
     const [hint, setHint]             = useState('');
     const [section, setSection]       = useState('');
-    const [deadline, setDeadline]     = useState('');
+    // const [deadline, setDeadline]     = useState('');
     
     const redirect = useNavigate();
 
     const addKanji = async () => {
-        const newKanji = { kanji, romaji, hint, section, deadline };
+        const newKanji = {kanji, romaji, hint, section};
         const response = await fetch('/create', {
             method: 'POST',
             body: JSON.stringify(newKanji),
@@ -22,10 +22,10 @@ export const CreateKanjiPage = () => {
         });
         if(response.status === 201){
             alert(`A new Kanji has been successfully created via the CreateKanjiPage`);
-            redirect("/kanji");
+            redirect("/kanji-list");
         } else {
             alert(`A new Kanji has failed to create via the CreateKanjiPage with status code: ${response.status}`);
-            redirect("/kanji");
+            redirect("/kanji-list");
         }
     };
 
@@ -62,7 +62,7 @@ export const CreateKanjiPage = () => {
                     <input
                         type="text"
                         name="hint"
-                        placeholder="Hint for the Kanji"
+                        placeholder="Hint word for the Kanji"
                         value={hint}
                         onChange={e => setHint(e.target.value)} 
                         id="newHint" />
@@ -72,11 +72,11 @@ export const CreateKanjiPage = () => {
                         type="number"
                         name="section"
                         value={section}
-                        placeholder="JLPT Section"
+                        placeholder={jlpt}
                         onChange={e => setSection(e.target.value)} 
                         id="newSection" />
 
-                    <label htmlFor="newDeadline">Study Deadline</label>
+                    {/* <label htmlFor="newDeadline">Study Deadline</label>
                     <input
                         type="date"
                         name="deadline"
@@ -84,7 +84,7 @@ export const CreateKanjiPage = () => {
                         placeholder="MM-DD-YY"
                         onChange={e => setDeadline(e.target.value)} 
                         pattern="\d{2}-\d{2}-\d{2}"
-                        id="newDeadline" />
+                        id="newDeadline" /> */}
 
                     <button onClick={addKanji}>Add Kanji</button>
                 </fieldset>

@@ -7,7 +7,7 @@ export const EditKanjiPage = ({ toEditKanji }) => {
     const [romaji, setRomaji]         = useState(toEditKanji.romaji);
     const [hint, setHint]             = useState(toEditKanji.hint);
     const [section, setSection]       = useState(toEditKanji.section);
-    const [deadline, setDeadline]     = useState(toEditKanji.deadline.slice(0,10));
+    // const [deadline, setDeadline]     = useState(toEditKanji.deadline.slice(0,10));
     
     const redirect = useNavigate();
 
@@ -18,8 +18,7 @@ export const EditKanjiPage = ({ toEditKanji }) => {
                 kanji: kanji, 
                 romaji: romaji, 
                 hint: hint,
-                section: section,
-                deadline: deadline
+                section: section
             }),
             headers: {'Content-Type': 'application/json'},
         });
@@ -30,7 +29,7 @@ export const EditKanjiPage = ({ toEditKanji }) => {
             const errMessage = await response.json();
             alert(`A Kanji has failed to update via the EditKanjiPage with status code: ${response.status}. ${errMessage.Error}`);
         }
-        redirect("/kanji");
+        redirect("/kanji-list");
     }
 
     return (
@@ -75,14 +74,14 @@ export const EditKanjiPage = ({ toEditKanji }) => {
                             onChange={e => setSection(e.target.value)} 
                             id="newSection" />
 
-                        <label htmlFor="newDeadline">Study Deadline</label>
+                        {/* <label htmlFor="newDeadline">Study Deadline</label>
                         <input
                             type="date"
                             name="deadline"
                             value={deadline}
                             onChange={e => setDeadline(e.target.value)} 
                             pattern="\d{2}-\d{2}-\d{2}"
-                            id="newDeadline" />
+                            id="newDeadline" /> */}
 
                         <button onClick={editKanji}>Edit Kanji</button>
                     </fieldset>

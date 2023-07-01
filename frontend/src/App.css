@@ -830,6 +830,36 @@ tr {
 
 
 
+/*    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -851,7 +881,8 @@ tr {
         font-size: large;
         color: var(--dark-gray);
         display: flex;
-        max-height: 100vh;           /*     vert     */
+        max-height: 95vh;           /*     vert     */
+        max-height: 95vh;
         flex-direction: row;         /*     vert     */
         direction: ltr;                      /*    scrolling horiz    */
         overflow-x: scroll;                 /*    scrolling horiz    */
@@ -887,7 +918,6 @@ tr {
         border: 10px solid var(--matcha);
         border-radius: 10px;
         max-width: 80vw;                /*     vert     */
-        max-height: 100vh;               /*     vert     */
         min-width:  300px;
         overflow: auto;                 /*     vert     */
         scroll-behavior: smooth;
@@ -1165,7 +1195,8 @@ tr {
         font-size: large;
         color: var(--dark-gray);
         display: flex;
-        max-height: 100vh;           /*     vert     */
+        max-height: 95vh;           /*     vert     */
+        min-height: 95vh; 
         flex-direction: row;         /*     vert     */
         direction: ltr;                      /*    scrolling horiz    */
         /* overflow-x: scroll;                   */
@@ -1198,7 +1229,7 @@ tr {
         padding:  5px;                   
         font-weight: 100;             
         font-size: large;       
-        max-height: 15%;
+        max-height: 70px;
         max-width: 80%;
         min-width: 45%;
         justify-content: center;
@@ -1209,6 +1240,7 @@ tr {
         background-color: var(--matcha);
         color: var(--dark-gray);
         border: 5px solid var(--medium-cream);
+        cursor: pointer;
     }
 
     .nav-text {
@@ -1218,13 +1250,13 @@ tr {
     }
 
     .header-name {
-        margin: 1% 1% 8% 1%;
+        margin: 1% 1% 18% 1%;
         padding: 2%;
         writing-mode: vertical-lr;            /*     vert      */
         display: flex;                     /*     vert      */
         flex-direction: column;                /*     vert      */
-        min-height: 60vh;
-        max-height: 60vh;
+        min-height: 50vh;
+        max-height: 50vh;
     }
 
     .header-contact {
@@ -1238,13 +1270,13 @@ tr {
     }
 
     .header-projects {
-        margin: 1% 1% 8% 1%;
+        margin: 1% 1% 18% 1%;
         padding: 2%;
         writing-mode: vertical-lr;            /*     vert      */
         display: flex;                     /*     vert      */
         flex-direction: column;                /*     vert      */
-        min-height: 60vh;
-        max-height: 60vh;
+        min-height: 50vh;
+        max-height: 50vh;
     }
 
     .header-products {
@@ -1279,22 +1311,25 @@ tr {
 
     .name-en {
         font-family: 'Zen Old Mincho', serif;
-        letter-spacing: +8px;                       /*      vert      */
+        letter-spacing: +7px;                       /*      vert      */
+        word-spacing: 1px;
         margin: 5px;
         font-weight: 100;                           /*     vert      */
         font-size: large;                            /*     vert      */
         align-items: center;                            /*     vert      */
         justify-content: center;                            /*     vert      */
-        text-align: center;
+        padding: 5% 0% 0% 0%;
     }
 
     .name-ja {
         font-family: 'Zen Old Mincho', serif;      
         text-align: center;                      /*     vert      */
         margin: 5px;
-        letter-spacing: +7px;                              /*     vert      */
+        letter-spacing: +5px;                              /*     vert      */
+        word-spacing: 1px;
         align-items: center;                            /*     vert      */
         justify-content: center;                            /*     vert      */
+        padding: 20% 0% 0% 0%;
     }
 
     .web-en {
@@ -1340,6 +1375,7 @@ tr {
     .kanji-en {
         font-family: 'Zen Old Mincho', serif;
         letter-spacing: +10px;                       /*      vert      */
+        word-spacing: 2px;
         margin: 5px;
         font-weight: 100;                           /*     vert      */
         font-size: large;                            /*     vert      */
@@ -1353,6 +1389,7 @@ tr {
         font-family: 'Zen Old Mincho', serif;      
         margin: 5px;
         letter-spacing: +10px;                              /*     vert      */
+        word-spacing: 2px;
         align-items: center;                            /*     vert      */
         justify-content: center;                            /*     vert      */
         padding: 50% 0% 5% 0%;
@@ -1396,7 +1433,7 @@ tr {
         letter-spacing: +10px;                              /*     vert      */
         align-items: center;                            /*     vert      */
         justify-content: center;                            /*     vert      */
-        padding: 50% 0% 0% 0%;
+        padding: 45% 0% 0% 0%;
     }
 
     .staff-en {
@@ -1604,12 +1641,15 @@ tr {
 
 
 
-    .footer-p {
-        margin: 0px;                   /*     vert      */
-        text-align: center;              /*     vert      */
-        font-weight: 100;                   /*     vert      */
-        font-size: small;                  /*     vert      */
-        letter-spacing: +5px;                    /*     vert      */
+    .footer-p {          
+        color: var(--matcha);
+        font-family: 'Zen Old Mincho', serif;
+        letter-spacing: +14px;                       /*      vert      */
+        margin: 5px;
+        font-weight: 100;                           /*     vert      */
+        font-size: large;                            /*     vert      */
+        align-items: center;                            /*     vert      */
+        justify-content: center;                            /*     vert      */
     }
 
     .image-gallery-icon {
@@ -1646,8 +1686,12 @@ tr {
         border: 5px solid var(--dark-gray);
         background-color: var(--dark-gray);
         border-radius: 5px;
-        width: 90%;
-        height: 100%;
+        width: 70%;
+        height: 70%;
+    }
+
+    img.image-gallery-image {
+        height: calc(70vh - 100px);
     }
 
     .image-gallery-thumbnail {
@@ -1694,6 +1738,8 @@ tr {
         background-color: var(--dark-matcha);
         border: 5px solid var(--dark-matcha);
         color: var(--light-cream);
+        font-size: larger;
+        font-weight: 500;
         border-radius: 5px;
         margin: 10px, 10px, 15px, 10px;
         min-width: 200px;
@@ -1705,10 +1751,11 @@ tr {
 
     .add-kanji-button:hover {
         cursor: default;
-        background-color: var(--dark-matcha);
-        border: 5px solid var(--dark-matcha);
-        color: var(--light-cream);
+        background-color: var(--medium-cream);
+        border: 5px solid var(--matcha);
+        color: var(--dark-matcha);
         border-radius: 5px;
+        cursor: pointer;
     }
 
     .add-kanji-icon {
@@ -1761,6 +1808,21 @@ tr {
 
     .kanji-header {
         font-size: 100%;
+    }
+
+    .titles-div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title-kanji {
+        float: left;
+        margin: 2%;
+    }
+
+    .title-jlpt {
+        float: right;
+        margin: 2%;
     }
 
 }

@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import KanjiRow from './KanjiRow';
 
 function KanjiTable({ kanjis, onDelete, onEdit }) {
+
     return (
             <table className="kanji-table">
                 <thead>
                     <tr>
-                        <th className="kanji-header">Delete</th>
-                        <th className="kanji-header">Edit</th>
                         <th className="kanji-header">Kanji</th>
                         <th className="kanji-header">Romaji</th>
                         <th className="kanji-header">Hint</th>
                         <th className="kanji-header">Section</th>
-                        <th className="kanji-header">Deadline</th>
+                        <th className="kanji-header">Delete</th>
+                        <th className="kanji-header">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
