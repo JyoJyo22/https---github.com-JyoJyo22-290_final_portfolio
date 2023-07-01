@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
+import KanjiFooter from './components/KanjiFooter';
 import HomePage from './pages/HomePage';
 import GalleryPage from './pages/GalleryPage';
 import StaffPage from './pages/StaffPage';
@@ -28,9 +30,22 @@ import products from './data/products';
 function App() {
   // pass shared State up to ancestor component
   // these State vars are shared btw KanjiHomePage and KanjiEditPage
-  const [kanji, setKanji] = useState([]);
+  const [kanji, setKanji] = useState("ご");
   const [kanjis, setKanjis] = useState([]);
   const [jlpt, setJlpt] = useState(1);
+
+  // RETRIEVE the entire list of kanji
+  const loadKanji = async (jlpt) => {
+  const response = await fetch(`/get/${jlpt}`, { method: 'GET' });         // JLPT param turns into a string here
+  const newKanjis = await response.json();
+  setKanjis(newKanjis);
+  }
+
+  // LOAD all the kanji
+  useEffect(() => {
+    // const str_jlpt = jlpt.toString();
+    loadKanji(jlpt);
+}, [jlpt]);
 
   return (
     <div className="app">
@@ -53,8 +68,8 @@ function App() {
         </section>
 
         <Routes>
-          <Route path="/kanji-list" element={<IntraNav setJlpt={setJlpt} setKanjis={setKanjis} />} />
-          <Route path="/" element={<IntraNav setJlpt={setJlpt} setKanjis={setKanjis} />} />
+          <Route path="/kanji-list" element={<IntraNav jlpt={jlpt} setJlpt={setJlpt} setKanjis={setKanjis} />} />
+          <Route path="/" element={<IntraNav jlpt={jlpt} setJlpt={setJlpt} setKanjis={setKanjis} />} />
         </Routes>
 
           <main>
@@ -62,7 +77,7 @@ function App() {
               <Routes>
                 <Route path="/about" element={<HomePage />} />
                 <Route path="/kanji-list" element={<KanjiListPage jlpt={jlpt}  setJlpt={setJlpt} setKanji={setKanji} kanjis={kanjis} setKanjis={setKanjis} />} />
-                <Route path="/" element={<KanjiGoPage jlpt={jlpt} setKanji={setKanji} />} />
+                <Route path="/" element={<KanjiGoPage jlpt={jlpt} kanji={kanji} setKanjis={setKanjis} />} />
                 <Route path="/kanji-create" element={<CreateKanjiPage jlpt={jlpt} />} />
                 <Route path="/kanji-edit" element={<EditKanjiPage toEditKanji={kanji}/>} />
                 <Route path="/projects" element={<GalleryPage />} />
@@ -74,11 +89,13 @@ function App() {
             </section>
           </main>
 
-        <footer>
-          <p className="footer-p">
-              &copy; KANJI GO 2023
-          </p>
-        </footer>
+        <Routes>
+          <Route path="/about" element={<Footer />} />
+          <Route path="/contact" element={<Footer />} />
+          <Route path="/projects" element={<Footer />} />
+          <Route path="/kanji-list" element={<KanjiFooter kanji={kanji} setKanji={setKanji} kanjis={kanjis} />} />
+          <Route path="/" element={<KanjiFooter kanji={kanji} setKanji={setKanji} kanjis={kanjis} />} />
+        </Routes>
 
       </BrowserRouter>
     </div>

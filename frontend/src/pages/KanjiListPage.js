@@ -8,12 +8,12 @@ function KanjiListPage( {jlpt, setJlpt, setKanji, kanjis, setKanjis} ) {
     // Use the Navigate for redirection
     const redirect = useNavigate();
 
-    // RETRIEVE the entire list of kanji
-    const loadKanji = async (jlpt) => {
-        const response = await fetch(`/get/${jlpt}`, { method: 'GET' });         // JLPT param turns into a string here
-        const newKanjis = await response.json();
-        setKanjis(newKanjis);
-    } 
+    // // RETRIEVE the entire list of kanji
+    // const loadKanji = async (jlpt) => {
+    //     const response = await fetch(`/get/${jlpt}`, { method: 'GET' });         // JLPT param turns into a string here
+    //     const newKanjis = await response.json();
+    //     setKanjis(newKanjis);
+    // } 
 
 
     // CREATE a new single kanji
@@ -49,10 +49,10 @@ function KanjiListPage( {jlpt, setJlpt, setKanji, kanjis, setKanjis} ) {
 
 
     // LOAD all the kanji
-    useEffect(() => {
-        // const str_jlpt = jlpt.toString();
-        loadKanji(jlpt);
-    }, [jlpt]);
+    // useEffect(() => {
+    //     // const str_jlpt = jlpt.toString();
+    //     loadKanji(jlpt);
+    // }, [jlpt]);
 
     // DISPLAY the kanji
     return (
@@ -62,8 +62,7 @@ function KanjiListPage( {jlpt, setJlpt, setKanji, kanjis, setKanjis} ) {
                 <h2 className='title-jlpt'>JLPT {jlpt}</h2>
             </div>
             <p className="kanji-list-p">Your current Kanji list. Each Kanji comes with its written Japanese form, 
-                romaji form, a hint for memorizing that Kanji, and the JLPT section that the Kanji is required for.
-                Use the buttons below to add a new Kanji, edit a previous Kanji entry, or delete an entry.
+                romaji form, a hint word for memorizing that Kanji, and the JLPT section that the Kanji is required for.
             </p>
             <button className="add-kanji-button" onClick={() => onCreateKanji()}>Add Kanji</button>
                 {/* <CgAddR onClick={() => onCreateKanji()} className="add-kanji-icon" title="create-kanji" /> */}
