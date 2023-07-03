@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
 import { useNavigate } from "react-router-dom";
 
-export const EditKanjiPage = ({ toEditKanji }) => {
+export const EditKanjiPage = ({ jlpt, toEditKanji, setKanjis }) => {
  
     const [kanji, setKanji]           = useState(toEditKanji.kanji);
     const [romaji, setRomaji]         = useState(toEditKanji.romaji);
@@ -25,6 +25,11 @@ export const EditKanjiPage = ({ toEditKanji }) => {
 
         if (response.status === 200) {
             alert(`A Kanji has been successfully updated via the EditKanjiPage`);
+            
+            // the only way to get React to immediately upload the updated kanji DB is by fetching the entire DB again
+            const response = await fetch(`/get/${jlpt}`, { method: 'GET' });      // JLPT param turns into a string here
+            const newKanjis = await response.json();
+            setKanjis(newKanjis);
         } else {
             const errMessage = await response.json();
             alert(`A Kanji has failed to update via the EditKanjiPage with status code: ${response.status}. ${errMessage.Error}`);

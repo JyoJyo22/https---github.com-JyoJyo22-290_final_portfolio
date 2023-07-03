@@ -1,10 +1,19 @@
 import React, {useEffect} from "react";
 
-function KanjiFooter( { kanji, setKanji, kanjis })  {
+function KanjiFooter( { kanji, setKanji, kanjis, setRoman, setHinted, setImageURL })  {
 
-    useEffect(() => {
-        setKanji(kanji);
-    }, [kanji]);
+    const handleClick = (kanjiString) => {
+        const clickedKanji = JSON.parse(kanjiString);
+        setKanji(clickedKanji);
+        setRoman(false);
+        setHinted(false);
+        setImageURL("default URL");
+    }
+
+    // useEffect(() => {
+    //     // setKanji(kanji);
+    //     console.log("here's KANJI: ", kanji)
+    // }, [kanji]);
 
     return(
         <footer>
@@ -15,9 +24,10 @@ function KanjiFooter( { kanji, setKanji, kanjis })  {
                     {kanjis.map((kanji, index) => 
                         <tr>
                             <td className="kanji-footer-cell" 
-                                title="Kanji-Romaji" 
-                                value={kanji} 
-                                onClick={e => setKanji(e.target.value)} 
+                                title="Kanji-Romaji"
+                                id={JSON.stringify(kanji)}
+                                // onClick={e => setKanji(e.target.value)} 
+                                onClick={e => handleClick(e.target.id)}
                                 key={index}
                                 >
                                 {kanji.kanji} ~ {kanji.romaji}

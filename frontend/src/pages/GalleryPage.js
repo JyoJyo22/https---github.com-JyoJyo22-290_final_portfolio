@@ -68,7 +68,7 @@ function GalleryPage() {
 
     return(
         <>
-            <h3>Learning Japanese, one sun at a time:</h3>
+            <h2>Kanji Picture Gallery</h2>
             <article>                 
                 <ReactImageGallery items={images} className="react-image-gallery"/>
             </article>

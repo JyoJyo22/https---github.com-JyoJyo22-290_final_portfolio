@@ -1,15 +1,21 @@
 import React from "react";
 
 
-function IntraNav( {jlpt, setJlpt, setKanjis} ) {
+function IntraNav( {jlpt, setJlpt, setKanjis, setKanji, setImageURL, setRoman, setHinted} ) {
 
     // set the current JLPT section
     const changeJlpt = async (newJlpt) => {
         setJlpt(newJlpt);
         loadKanji(newJlpt);
-
-        // make this button :active in css
-        
+        setKanji({
+            kanji: "ご",
+            romaji: "go",
+            hint: "5",
+            section: 1
+        });
+        setImageURL("default URL");
+        setRoman(false);
+        setHinted(false);
     }
 
     // RETRIEVE the entire list of kanji for the current JLPT section

@@ -2,9 +2,16 @@ import 'dotenv/config';
 import express from 'express';
 // import the export obj from model.mjs and name it kanjiModels
 import * as kanjiModels from './model.mjs';
+import { Configuration, OpenAIApi } from 'openai';
 
 const PORT = process.env.PORT;
 const app = express();
+// const config = new Configuration({apiKey: process.env.OPENAI_API_KEY});
+const config = new Configuration({apiKey: "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"});
+const openai = new OpenAIApi(config);
+
+// console.log("here's your openAI API env var: ", config.apiKey);
+
 // REST controllers require JSON MIME type   (npm install rest)
 app.use(express.json());
 
@@ -49,6 +56,27 @@ app.get('/get/:jlpt', (req, res) => {
         });
 });
 
+// RETRIEVE OpenAI Dall-E IMAGES
+app.get('/get/img/:imageInput', async (req, res) => {
+    try {
+        const response = await openai.createImage({
+            prompt: req.params.imageInput,
+            n: 1,
+            size: "256x256",
+        });
+        const image_url = response.data.data[0].url;
+        console.log("Dall-E Image URL: ", image_url);
+        res.json(image_url);
+    }
+    catch (error) {
+        if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.data);
+          } else {
+            console.log(error.message);
+          }
+    }
+});
 
 // define a Retrieve by ID route
 // app.get('/get/:_id/:jlpt', (req, res) => {

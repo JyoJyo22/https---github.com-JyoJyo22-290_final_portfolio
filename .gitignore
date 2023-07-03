@@ -7,7 +7,6 @@ node_modules
 /node_modules
 .DS_Store
 
-
 frontend/node_modules/.cache/.eslintcache
 frontend/node_modules/.cache/babel-loader/4c01e0cc1056f7659b7284c03e8b56fc35b1c29d35ef1296284c3cd500fec64d.json
 frontend/node_modules/.cache/babel-loader/96b2c401643aa7bf405ecfe11d82c44f9275bdb723e126beb834f8de26df3a4f.json

@@ -48,11 +48,10 @@ function KanjiListPage( {jlpt, setJlpt, setKanji, kanjis, setKanjis} ) {
     }
 
 
-    // LOAD all the kanji
     // useEffect(() => {
     //     // const str_jlpt = jlpt.toString();
-    //     loadKanji(jlpt);
-    // }, [jlpt]);
+    //     // loadKanji(jlpt);
+    // }, [kanjis]);
 
     // DISPLAY the kanji
     return (

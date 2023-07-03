@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export const CreateKanjiPage = ( { jlpt }) => {
+export const CreateKanjiPage = ( { jlpt, setKanjis }) => {
 
     const [kanji, setKanji]           = useState('');
     const [romaji, setRomaji]         = useState('');
@@ -22,6 +22,12 @@ export const CreateKanjiPage = ( { jlpt }) => {
         });
         if(response.status === 201){
             alert(`A new Kanji has been successfully created via the CreateKanjiPage`);
+
+            // the only way to get React to immediately upload the updated kanji DB is by fetching the entire DB again
+            const response = await fetch(`/get/${jlpt}`, { method: 'GET' });      // JLPT param turns into a string here
+            const newKanjis = await response.json();
+            setKanjis(newKanjis);
+
             redirect("/kanji-list");
         } else {
             alert(`A new Kanji has failed to create via the CreateKanjiPage with status code: ${response.status}`);

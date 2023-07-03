@@ -17,10 +17,11 @@ function HomePage() {
                         list your Kanji alphabetically &#40;alphabetical by romaji&#41;
                     </li>
                     <li>
-                        You can also take screenshots of your Kanji picture creations and save them in the Gallery tab
+                        You can also make use of OpenAI's Dall-E program by searching for a picture to match up with your 
+                        kanji. Then you can take screenshots of your Kanji-picture pairs and save them in the Kanji Pics tab
                     </li>
                     <li>
-                        Feel free to leave feeback for the site creator via the Contact tab
+                        Feel free to leave feeback for the site via the Contact tab
                     </li>
                 </ul>
             </article>
