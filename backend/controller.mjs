@@ -7,7 +7,7 @@ import { Configuration, OpenAIApi } from 'openai';
 const PORT = process.env.PORT;
 const app = express();
 // const config = new Configuration({apiKey: process.env.OPENAI_API_KEY});
-const config = new Configuration({apiKey: "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"});
+const config = new Configuration({apiKey: <place key here>});
 const openai = new OpenAIApi(config);
 
 // console.log("here's your openAI API env var: ", config.apiKey);
